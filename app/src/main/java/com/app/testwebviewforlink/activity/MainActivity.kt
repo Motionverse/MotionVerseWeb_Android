@@ -1,4 +1,4 @@
-package com.app.testwebviewforlink
+package com.app.testwebviewforlink.activity
 
 import android.Manifest
 import android.content.Context
@@ -16,6 +16,10 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.app.testwebviewforlink.JsCallAndroid
+import com.app.testwebviewforlink.R
+import com.app.testwebviewforlink.WebViewHelper
+import com.app.testwebviewforlink.WebViewManager
 import com.app.testwebviewforlink.audio.AudioManager
 import com.app.testwebviewforlink.audio.VoiceButton
 import com.app.testwebviewforlink.databinding.ActivityMainBinding
@@ -225,7 +229,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        flContainer.removeAllViews()
+        if (this::flContainer.isInitialized)
+            flContainer.removeAllViews()
         WebViewManager.recycle(mWebView)
         AudioManager.release(this)
     }

@@ -11,4 +11,5 @@
     <string name="str_intro"><![CDATA[Motionverse数字人开放平台提供数字人 PaaS & SaaS 解决方案，支持以文本、语音、动作等多种方式通过AI智能算法来驱动数字人。提供给客户标准的 PaaS 接口与 SaaS 运营工具，方便客户将数字人能力集成进不同的终端与场景。主要面对的行业包括新零售、政务、金融、运营商、传媒、游戏等，场景包括数字人信息播报等]]></string>
     <string name="str_version">Version 1.0</string>
     <string name="str_name">Motionverse</string>
+    <string name="str_start_now">立即体验</string>
 </resources>
