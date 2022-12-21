@@ -211,7 +211,7 @@ class BottomDialog(private val context: Activity, private val isDialog: Boolean 
 
 //==========================公用方法=======================
 
-    fun setResId(resID: Int, init: OnViewInit? = null): BottomDialog {
+    fun setResId(resID: Int, init: OnViewInit): BottomDialog {
         resId = resID
         viewInit = init
         return this

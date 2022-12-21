@@ -78,7 +78,7 @@ object AudioManager {
         isRecording = false
         audioRecord?.stop()
         convertPcmToWav(context)
-        Toast.makeText(context, "录制完成", Toast.LENGTH_SHORT).show()
+        Log.e(TAG, "stopRecord: 录制完成")
     }
 
     fun startRecord(context: Context) {

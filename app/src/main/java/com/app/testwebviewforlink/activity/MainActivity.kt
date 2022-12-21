@@ -143,7 +143,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun showExample() {
         BottomDialog(this@MainActivity)
-            .setResId(R.layout.dialog_example)
+            .setResId(R.layout.dialog_example) { _, _ -> }
             .setOutSideCancelable(true)
             .show()
     }
@@ -283,6 +283,7 @@ class MainActivity : AppCompatActivity() {
                         if (toBase64 != null) {
                             if (toBase64.isNotEmpty()) {
                                 callJs(AudioAnswerMotion, toBase64)
+                                toast("已经发送")
                             } else {
                                 Log.e(TAG, "onUp: err: base64 is null")
                             }
