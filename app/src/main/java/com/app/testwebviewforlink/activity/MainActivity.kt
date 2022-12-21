@@ -174,7 +174,7 @@ class MainActivity : AppCompatActivity() {
                     // 确定
                     findViewById<TextView>(R.id.tvSure).setOnClickListener {
                         mSp.edit().putInt(Key_Type_Interaction, type).apply()
-                        setEdtHint(type)
+                        setDisplayText(type)
                         dialog.dismiss()
                     }
 
@@ -262,38 +262,52 @@ class MainActivity : AppCompatActivity() {
             dataFrom = 1
         }
         val type = mSp.getInt(Key_Type_Interaction, 0)
-        setEdtHint(type)
+        setDisplayText(type)
         bind.tvBottom.setMotionEventListener(object : VoiceButton.MotionEventListener {
             override fun onDown() {
-                // 开始录制
-                AudioManager.startRecord(this@MainActivity)
+                val i = mSp.getInt(Key_Type_Interaction, 0)
+                if (i == 1) {
+                    // 开始录制
+                    AudioManager.startRecord(this@MainActivity)
+                }
             }
 
             override fun onUp() {
-                // 结束录制
-                AudioManager.stopRecord(this@MainActivity)
-                val wavFile = AudioManager.getWavFile(this@MainActivity)
-                if (wavFile?.exists() == true) {
-                    val toBase64 = wavFile.toBase64()
-                    if (toBase64 != null) {
-                        if (toBase64.isNotEmpty()) {
-                            val i = mSp.getInt(Key_Type_Interaction, 0)
-                            val type = if (i == 0) AudioBroadcast else AudioAnswerMotion
-                            callJs(type, toBase64)
-                        } else {
-                            Log.e(TAG, "onUp: err: base64 is null")
+                val i = mSp.getInt(Key_Type_Interaction, 0)
+                if (i == 1) {
+                    // 结束录制
+                    AudioManager.stopRecord(this@MainActivity)
+                    val wavFile = AudioManager.getWavFile(this@MainActivity)
+                    if (wavFile?.exists() == true) {
+                        val toBase64 = wavFile.toBase64()
+                        if (toBase64 != null) {
+                            if (toBase64.isNotEmpty()) {
+                                callJs(AudioAnswerMotion, toBase64)
+                            } else {
+                                Log.e(TAG, "onUp: err: base64 is null")
+                            }
                         }
                     }
                 }
             }
         })
+        bind.tvBottom.setOnClickListener {
+            val i = mSp.getInt(Key_Type_Interaction, 0)
+            if (i == 0) {
+                val data =
+                    "https://ds-model-tts.oss-cn-beijing.aliyuncs.com/temp/167144092926757110.wav"
+                callJs(AudioBroadcast, data)
+            }
+        }
     }
 
-    private fun setEdtHint(type: Int) {
+    private fun setDisplayText(type: Int) {
         if (type == 0) {
             bind.edtBottom.hint = "请输入播报文字"
+            bind.tvBottom.text = "点击播报语音文件"
         } else {
             bind.edtBottom.hint = "请输入问题文字"
+            bind.tvBottom.text = "长按说话"
         }
     }
 
