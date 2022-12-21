@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Administrator/androidProject/TestWebViewForLink/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/drawable/rectangle_c01_8dp_top.xml" value="0.132" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/drawable/selector_btn_bg.xml" value="0.1435" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/drawable/selector_radio.xml" value="0.1375" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/drawable/selector_radio_bg.xml" value="0.208" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/drawable/selector_radio_text_color.xml" value="0.1535" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/drawable/selector_tv_bg.xml" value="0.193" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/drawable/shape_dialog_bg.xml" value="0.2285" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/drawable/shape_edt_bg.xml" value="0.1435" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/drawable/shape_selected_bg.xml" value="0.151" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/drawable/shape_unselected_bg.xml" value="0.151" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/layout/activity_test.xml" value="0.25555555555555554" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/layout/dialog_bottom.xml" value="0.21574074074074073" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/layout/dialog_example.xml" value="0.25" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/layout/dialog_root_layout.xml" value="0.33229166666666665" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/layout/dialog_type_change.xml" value="0.33" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/layout/fragment_list_character.xml" value="0.25" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/layout/item_character.xml" value="0.322267620020429" />
+        <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/layout/layout_bottom_dialog.xml" value="0.18518518518518517" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
