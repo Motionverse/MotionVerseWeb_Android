@@ -29,7 +29,7 @@ class CharacterAdapter(val context: Context, private var list: List<CharacterBea
     }
 
     override fun getItem(position: Int): CharacterBean {
-        return list.get(position)
+        return list[position]
     }
 
     override fun getItemId(position: Int): Long {

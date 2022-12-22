@@ -5,15 +5,13 @@ import android.util.Log
 import android.view.View
 import android.widget.GridView
 import android.widget.TextView
-import android.widget.Toast
 import com.app.testwebviewforlink.R
 import com.app.testwebviewforlink.adapter.CharacterAdapter
 import com.app.testwebviewforlink.http.CharacterBean
 import com.app.testwebviewforlink.utils.NetUtils
 import com.app.testwebviewforlink.utils.toast
-import okhttp3.OkHttpClient
 
-class CharacterListFragment(val callBack: (abName: String) -> Unit) : BaseDialogFragment() {
+class CharacterListFragment(private val callBack: (abName: String) -> Unit) : BaseDialogFragment() {
 
     private val TAG = "CharacterListFragment"
 
@@ -43,6 +41,7 @@ class CharacterListFragment(val callBack: (abName: String) -> Unit) : BaseDialog
                         characterAdapter.notifyDataSetChanged()
                         gridView.setOnItemClickListener { _, _, position, _ ->
                             pos = position
+                            Log.e(TAG, "onResult: position:${pos}")
                             characterAdapter.choiceItem(position)
                         }
                     } else {
@@ -52,7 +51,7 @@ class CharacterListFragment(val callBack: (abName: String) -> Unit) : BaseDialog
 
             })
             findViewById<TextView>(R.id.tvSure).setOnClickListener {
-                if (pos <= 0) {
+                if (pos < 0) {
                     toast("请选择数字人")
                 } else {
                     callBack.invoke(list[pos].abName)

@@ -26,10 +26,9 @@ import com.app.testwebviewforlink.databinding.ActivityMainBinding
 import com.app.testwebviewforlink.fragment.CharacterListFragment
 import com.app.testwebviewforlink.http.setBaseUrl
 import com.app.testwebviewforlink.http.setHttpClient
-import com.app.testwebviewforlink.utils.OkHelper
-import com.app.testwebviewforlink.utils.toBase64
-import com.app.testwebviewforlink.utils.toast
+import com.app.testwebviewforlink.utils.*
 import com.app.testwebviewforlink.view.BottomDialog
+import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
 
@@ -303,15 +302,15 @@ class MainActivity : AppCompatActivity() {
         }
         // 平台介绍
         bind.tvPlatform.setOnClickListener {
-            callJs(TextAnswerMotion,"平台介绍")
+            callJs(TextAnswerMotion, "平台介绍")
         }
         // 技术介绍
         bind.tvTechnology.setOnClickListener {
-            callJs(TextAnswerMotion,"技术介绍")
+            callJs(TextAnswerMotion, "技术介绍")
         }
         // 业务介绍
         bind.tvBusiness.setOnClickListener {
-            callJs(TextAnswerMotion,"业务介绍")
+            callJs(TextAnswerMotion, "业务介绍")
         }
 
     }
@@ -345,14 +344,27 @@ class MainActivity : AppCompatActivity() {
                 Log.i(TAG, "onProgressChanged $newProgress")
             }
         })
-        mWebView.addJavascriptInterface(JsCallAndroid(), "android")
+        mWebView.addJavascriptInterface(JsCallAndroid {
+            try {
+                var jsonObject = JSONObject(it)
+                if (jsonObject.optString("type", null).equals("loadAb")) {
+                    if (jsonObject.optBoolean("data", false)) {
+                        showProgress("正在加载中...", false)
+                    } else {
+                        dismiss()
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }, "android")
 //        mWebViewHelper.loadUrl("file:///android_asset/test.html")
 //        mWebViewHelper.loadUrl("http://36.138.170.224:8060/")
 //        mWebViewHelper.loadUrl("http://36.138.170.224:8060/h5/index.html")
 //        mWebViewHelper.loadUrl("http://36.138.170.224:8060/avatarx/")
 //        mWebViewHelper.loadUrl("https://demo.deepscience.cn/poc/index.html")
         mWebViewHelper.loadUrl("https://avatar.deepscience.cn/v1/index.html?code=xVNEJ9ovjQ7EmOlnYO4TlRTB17zMOZOpaNqDyhZLU6BS5oKbvTZvhUc9YqlFaSOe20ooP3VN446VoqK3OoazZyBG4JV4FL+UQc1use3Xlu/deW5WLMq/25h0eOiV4XKk")
-
+        showProgress("正在加载中...", false)
         mSp = getSharedPreferences("motionverse", Context.MODE_PRIVATE)
 
     }

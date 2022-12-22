@@ -11,8 +11,18 @@ fun FragmentActivity.toast(str: String) {
     Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
 }
 
+fun FragmentActivity.showProgress(msg: String = "", cancelAble: Boolean = true) {
+    LoadingHelper.showDialog(this, msg = msg,cancelable=cancelAble)
+}
+
+fun FragmentActivity.dismiss() {
+    LoadingHelper.dismiss()
+}
+
+
 fun Fragment.toast(str: String) {
     Toast.makeText(requireActivity(), str, Toast.LENGTH_SHORT).show()
 }
 
-fun ImageView.show(url: String) = Glide.with(this.context).load(url).placeholder(R.drawable.role3).into(this)
+fun ImageView.show(url: String) =
+    Glide.with(this.context).load(url).placeholder(R.drawable.role3).into(this)

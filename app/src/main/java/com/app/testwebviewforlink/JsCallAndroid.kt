@@ -3,9 +3,9 @@ package com.app.testwebviewforlink
 import android.util.Log
 import android.webkit.JavascriptInterface
 
-class JsCallAndroid {
+class JsCallAndroid(val callBack: (msg: String) -> Unit) {
 
-     private val TAG = "JsCallAndroid"
+    private val TAG = "JsCallAndroid"
 
     @JavascriptInterface
     fun print(msg: String) {
@@ -20,6 +20,7 @@ class JsCallAndroid {
     @JavascriptInterface
     fun SendMsgToAPP(msg: String) {
         Log.e(TAG, "SendMsgToAPP $msg")
+        callBack.invoke(msg)
     }
 
 }
