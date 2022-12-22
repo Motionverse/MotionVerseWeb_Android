@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity() {
             if (str.isNotEmpty()) {
                 callJs(type, str)
                 bind.edtBottom.setText("")
+                toast("发送成功")
             } else {
                 toast(hintStr)
             }
@@ -300,15 +301,30 @@ class MainActivity : AppCompatActivity() {
                 callJs(AudioBroadcast, data)
             }
         }
+        // 平台介绍
+        bind.tvPlatform.setOnClickListener {
+            callJs(TextAnswerMotion,"平台介绍")
+        }
+        // 技术介绍
+        bind.tvTechnology.setOnClickListener {
+            callJs(TextAnswerMotion,"技术介绍")
+        }
+        // 业务介绍
+        bind.tvBusiness.setOnClickListener {
+            callJs(TextAnswerMotion,"业务介绍")
+        }
+
     }
 
     private fun setDisplayText(type: Int) {
         if (type == 0) {
             bind.edtBottom.hint = "请输入播报文字"
             bind.tvBottom.text = "点击播报语音文件"
+            bind.answerLayout.visibility = View.GONE
         } else {
             bind.edtBottom.hint = "请输入问题文字"
             bind.tvBottom.text = "长按说话"
+            bind.answerLayout.visibility = View.VISIBLE
         }
     }
 
@@ -334,7 +350,8 @@ class MainActivity : AppCompatActivity() {
 //        mWebViewHelper.loadUrl("http://36.138.170.224:8060/")
 //        mWebViewHelper.loadUrl("http://36.138.170.224:8060/h5/index.html")
 //        mWebViewHelper.loadUrl("http://36.138.170.224:8060/avatarx/")
-        mWebViewHelper.loadUrl("https://demo.deepscience.cn/poc/index.html")
+//        mWebViewHelper.loadUrl("https://demo.deepscience.cn/poc/index.html")
+        mWebViewHelper.loadUrl("https://avatar.deepscience.cn/v1/index.html?code=xVNEJ9ovjQ7EmOlnYO4TlRTB17zMOZOpaNqDyhZLU6BS5oKbvTZvhUc9YqlFaSOe20ooP3VN446VoqK3OoazZyBG4JV4FL+UQc1use3Xlu/deW5WLMq/25h0eOiV4XKk")
 
         mSp = getSharedPreferences("motionverse", Context.MODE_PRIVATE)
 

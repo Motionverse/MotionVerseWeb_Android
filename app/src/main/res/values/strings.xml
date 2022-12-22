@@ -12,4 +12,9 @@
     <string name="str_version">Version 1.0</string>
     <string name="str_name">Motionverse</string>
     <string name="str_start_now">立即体验</string>
+    <string name="str_you_can_ask_questions">您可以问以下问题：</string>
+    <string name="str_intro_platform">平台介绍</string>
+    <string name="str_intro_technology">技术介绍</string>
+    <string name="str_intro_business">业务介绍</string>
+    <string name="str_motionverse">Motionverse实例</string>
 </resources>

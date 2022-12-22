@@ -23,7 +23,9 @@
         <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/layout/fragment_list_character.xml" value="0.25" />
         <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/layout/item_character.xml" value="0.322267620020429" />
         <entry key="..\:/AndroidProject/TestWebViewForLink/app/src/main/res/layout/layout_bottom_dialog.xml" value="0.18518518518518517" />
-        <entry key="..\:/AndroidProject/test/webviewforlink/app/src/main/res/layout/activity_main.xml" value="0.30357142857142855" />
+        <entry key="..\:/AndroidProject/test/webviewforlink/app/src/main/res/drawable/shape_dialog_bg.xml" value="0.1345" />
+        <entry key="..\:/AndroidProject/test/webviewforlink/app/src/main/res/drawable/shape_tv_bg.xml" value="0.1345" />
+        <entry key="..\:/AndroidProject/test/webviewforlink/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/AndroidProject/test/webviewforlink/app/src/main/res/layout/activity_welcome.xml" value="0.33" />
         <entry key="..\:/AndroidProject/test/webviewforlink/app/src/main/res/layout/dialog_example.xml" value="0.32864583333333336" />
         <entry key="..\:/AndroidProject/test/webviewforlink/app/src/main/res/layout/dialog_root_layout.xml" value="0.32864583333333336" />
