@@ -31,6 +31,8 @@
         <entry key="..\:/AndroidProject/test/webviewforlink/app/src/main/res/layout/dialog_loading.xml" value="0.33" />
         <entry key="..\:/AndroidProject/test/webviewforlink/app/src/main/res/layout/dialog_root_layout.xml" value="0.32864583333333336" />
         <entry key="..\:/AndroidProject/test/webviewforlink/app/src/main/res/layout/dialog_type_change.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.24010416666666667" />
       </map>
     </option>
   </component>
