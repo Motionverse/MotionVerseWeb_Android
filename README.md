@@ -8,23 +8,22 @@
 
 ## 1. 主要功能
 
-### 调用js方法封装
+### 调用js方法
 ```kotlin
-/**
- * 调用js方法
- * type: 文字播报/声音播报/更新数字人文字问答/声音问答
- */
-private fun callJs(type: String, data: String) {
+// 更换数字人 type: 方法名 data:方法参数【数字人的索引】
+mWebView.evaluateJavascript("SendMsgToWebGL('{\"type\":\"ChangeCharacter\",\"data\":\"${robot.abName}\"}')") {}
 
-    mWebView.evaluateJavascript(
-        "SendMsgToWebGL('" +
-                "{\"type\":\"" + type + "\"," +
-                "\"data\":\"" + data + "\"}" +
-                "')"
-    ) {
-        Log.e("WebView", it)
-    }
-}
+// 播报声音文件地址 type: 方法名 data:方法参数【声音文件URL地址】
+mWebView.evaluateJavaScript("SendMsgToWebGL('{\"type\":\"AudioBroadcast\",\"data\":\"$audioUrl\"}')") {}
+
+// 播报文本 type: 方法名 data:方法参数【播报的文本】
+mWebView.evaluateJavaScript("SendMsgToWebGL('{\"type\":\"TextBroadcast\",\"data\":\"$text\"}')") {}
+
+// 问答 文字问答 type: 方法名 data:方法参数【问题的文本】
+mWebView.evaluateJavaScript("SendMsgToWebGL('{\"type\":\"TextAnswerMotion\",\"data\":\"$text\"}')") {}
+
+// 问答 语音问答 type: 方法名 data:方法参数【录音流的BASE64编码】
+mWebView.evaluateJavaScript("SendMsgToWebGL('{\"type\":\"AudioAnswerMotion\",\"data\":\"$audioEncode\"}')") {}
 ```
 
 ### 展示设置页面
